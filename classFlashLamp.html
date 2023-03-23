@@ -25,6 +25,9 @@
             if (this.energy > 0) {
                 this.energy--;
             }
+            if (this.energy === 0) {
+                alert('Out of battery');
+            }
         }
     }
 
@@ -63,7 +66,7 @@
     }
 
     let battery = new Battery();
-    battery.setEnergy(10);
+    battery.setEnergy(1);
 
     let flashlamp = new FlashLamp();
     flashlamp.setBattery(battery);
@@ -71,13 +74,13 @@
     document.write(`Battery infor: ${flashlamp.getBatteryInfor()} <br>`);
     flashlamp.light();
 
-    document.write('Turn on: <br>');
+    document.write('Turn on <br>');
     flashlamp.turnOn();
     flashlamp.light();
     battery.decreaseEnergy();
     document.write(`Battery infor: ${flashlamp.getBatteryInfor()} <br>`);
 
-    document.write('Turn off:');
+    document.write('Turn off');
     flashlamp.turnOff();
     flashlamp.light();
 </script>
